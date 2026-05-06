@@ -1,87 +1,269 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="description" content="Alessandro Reato — Director, Producer, Filmmaker. Got a Light? Studio · T64 Produzioni.">
+<meta name="theme-color" content="#e8f0f8">
+<meta property="og:title" content="Alessandro Reato — Portfolio">
+<meta property="og:description" content="Director · Producer · Filmmaker">
+<meta property="og:type" content="website">
+<title>Alessandro Reato — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#000;color:#c8e8ff;font-family:'Share Tech Mono',monospace;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:0 0 60px;overflow-x:hidden}
-.scanlines{position:fixed;inset:0;pointer-events:none;z-index:100;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.18) 2px,rgba(0,0,0,0.18) 4px)}
-.boot-bar{width:100%;background:#000;border-bottom:1px solid #00aaff22;padding:10px 24px;display:flex;justify-content:space-between;align-items:center}
-.boot-logo{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;letter-spacing:0.3em;color:#0066cc;text-transform:uppercase}
-.boot-status{font-size:10px;letter-spacing:0.15em;color:#004488;animation:blink 2s step-end infinite}
+
+:root{
+  --bg:#e8f0f8;
+  --bg2:#dde8f4;
+  --border:#b0c8e8;
+  --border2:#8aaecc;
+  --text:#0a2040;
+  --text-dim:#4a6880;
+  --text-faint:#8aaecc;
+  --accent:#0055aa;
+  --accent2:#0077cc;
+  --accent-glow:#0055aa22;
+  --sym-x:#3366cc;
+  --sym-o:#cc2200;
+  --sym-sq:#cc4488;
+  --sym-tr:#008855;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Share Tech Mono',monospace;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:0 0 60px;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* scanlines più sottili su sfondo chiaro */
+.scanlines{
+  position:fixed;inset:0;pointer-events:none;z-index:100;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,40,80,0.04) 3px,rgba(0,40,80,0.04) 4px);
+}
+
+.boot-bar{
+  width:100%;background:var(--text);
+  padding:10px 24px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.boot-logo{
+  font-family:'Orbitron',monospace;font-size:11px;font-weight:700;
+  letter-spacing:0.3em;color:#4a8acc;text-transform:uppercase;
+}
+.boot-status{
+  font-size:10px;letter-spacing:0.15em;color:#2a5080;
+  animation:blink 2s step-end infinite;
+}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-.memory-card{width:100%;background:#00000a;border-bottom:1px solid #001833;padding:8px 24px;display:flex;gap:24px;align-items:center}
-.mc-dot{width:8px;height:8px;border-radius:50%;background:#0044aa;box-shadow:0 0 6px #0066ff}
-.mc-text{font-size:9px;letter-spacing:0.2em;color:#003366}
-.main{width:100%;max-width:580px;padding:0 28px;display:flex;flex-direction:column;align-items:center}
-.hero{width:100%;padding:52px 0 36px;display:flex;flex-direction:column;align-items:center;text-align:center}
-.hero-eyebrow{font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:#004488;margin-bottom:24px}
-.ps2-cross{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:20px}
+
+.memory-card{
+  width:100%;background:var(--bg2);
+  border-bottom:1px solid var(--border);
+  padding:8px 24px;display:flex;gap:20px;align-items:center;
+}
+.mc-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--accent);box-shadow:0 0 6px var(--accent-glow);
+}
+.mc-text{font-size:9px;letter-spacing:0.2em;color:var(--text-faint)}
+
+.main{
+  width:100%;max-width:580px;
+  padding:0 24px;
+  display:flex;flex-direction:column;align-items:center;
+}
+
+.hero{
+  width:100%;padding:52px 0 36px;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+}
+.hero-eyebrow{
+  font-size:10px;letter-spacing:0.4em;text-transform:uppercase;
+  color:var(--text-faint);margin-bottom:24px;
+}
+.ps2-cross{
+  display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:20px;
+}
 .ps2-sym{font-size:14px;font-family:'Share Tech Mono',monospace}
-.sym-x{color:#5588ff;opacity:0.7}.sym-o{color:#ff4444;opacity:0.7}.sym-sq{color:#ff88cc;opacity:0.7}.sym-tr{color:#44cc88;opacity:0.7}
-.hero-name{font-family:'Orbitron',monospace;font-size:clamp(22px,6vw,38px);font-weight:900;letter-spacing:0.08em;text-transform:uppercase;color:#fff;line-height:1.1;margin-bottom:8px;text-shadow:0 0 20px #0066ff44}
-.hero-name span{color:#0088ff}
+.sym-x{color:var(--sym-x);opacity:0.8}
+.sym-o{color:var(--sym-o);opacity:0.8}
+.sym-sq{color:var(--sym-sq);opacity:0.8}
+.sym-tr{color:var(--sym-tr);opacity:0.8}
+
+.hero-name{
+  font-family:'Orbitron',monospace;
+  font-size:clamp(22px,6vw,38px);
+  font-weight:900;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--text);line-height:1.1;margin-bottom:8px;
+  text-shadow:0 0 24px var(--accent-glow);
+}
+.hero-name span{color:var(--accent2)}
+
 .hero-sub-row{display:flex;align-items:center;gap:12px;margin-top:20px}
-.hs-line{flex:1;height:1px;background:#001833}
-.hs-text{font-size:10px;letter-spacing:0.25em;color:#003366;text-transform:uppercase;white-space:nowrap}
-.select-menu{width:100%;display:flex;flex-direction:column;gap:4px;margin:32px 0}
+.hs-line{flex:1;height:1px;background:var(--border)}
+.hs-text{
+  font-size:10px;letter-spacing:0.25em;color:var(--text-dim);
+  text-transform:uppercase;white-space:nowrap;
+}
 
-.menu-item{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid #001833;background:#00000a;text-decoration:none;color:#c8e8ff;transition:border-color 0.15s,background 0.15s;position:relative;overflow:hidden}
-.menu-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#0066ff;opacity:0;transition:opacity 0.15s}
-.menu-item.active:hover{border-color:#0044aa;background:#000d1a;cursor:pointer}
+.select-menu{
+  width:100%;display:flex;flex-direction:column;gap:4px;margin:32px 0;
+}
+
+.menu-item{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 16px;
+  border:1px solid var(--border);background:var(--bg2);
+  text-decoration:none;color:var(--text);
+  transition:border-color 0.15s,background 0.15s,box-shadow 0.15s;
+  position:relative;overflow:hidden;
+}
+.menu-item::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--accent);opacity:0;transition:opacity 0.15s;
+}
+
+.menu-item.active{cursor:pointer}
+.menu-item.active:hover{border-color:var(--accent2);background:#d0e4f8;box-shadow:0 2px 12px var(--accent-glow)}
 .menu-item.active:hover::before{opacity:1}
-.menu-item.active:hover .mi-title{color:#fff}
-.menu-item.active:hover .mi-btn{color:#0088ff;border-color:#0088ff}
-.menu-item.active:hover .mi-arrow{color:#0088ff}
-
-.mi-btn{font-family:'Orbitron',monospace;font-size:10px;font-weight:700;color:#003366;border:1px solid #002244;padding:4px 8px;border-radius:2px;white-space:nowrap;transition:color 0.15s,border-color 0.15s;flex-shrink:0}
-.mi-content{flex:1;display:flex;flex-direction:column;gap:3px}
-.mi-title{font-family:'Orbitron',monospace;font-size:12px;font-weight:400;letter-spacing:0.08em;color:#88aacc;transition:color 0.15s;text-transform:uppercase}
-.mi-sub{font-size:10px;letter-spacing:0.1em;color:#002244}
-.mi-arrow{font-size:14px;color:#002244;transition:color 0.15s;font-family:'Orbitron',monospace}
+.menu-item.active:hover .mi-title{color:var(--accent)}
+.menu-item.active:hover .mi-btn{color:var(--accent2);border-color:var(--accent2)}
+.menu-item.active:hover .mi-arrow{color:var(--accent2)}
 
 .menu-item.has-overlay{cursor:pointer}
-.menu-item.has-overlay:hover{border-color:#0044aa;background:#000d1a}
+.menu-item.has-overlay:hover{border-color:var(--accent2);background:#d0e4f8;box-shadow:0 2px 12px var(--accent-glow)}
 .menu-item.has-overlay:hover::before{opacity:1}
-.menu-item.has-overlay:hover .mi-title{color:#fff}
+.menu-item.has-overlay:hover .mi-title{color:var(--accent)}
+.menu-item.has-overlay:hover .mi-arrow{color:var(--accent2)}
 .menu-item.has-overlay:hover .mi-sub-email{opacity:1;transform:translateY(0)}
 .menu-item.has-overlay:hover .mi-sub-default{opacity:0;transform:translateY(-4px)}
 
+.mi-btn{
+  font-family:'Orbitron',monospace;font-size:10px;font-weight:700;
+  color:var(--text-faint);border:1px solid var(--border);
+  padding:4px 8px;border-radius:2px;white-space:nowrap;
+  transition:color 0.15s,border-color 0.15s;flex-shrink:0;
+}
+.mi-content{flex:1;display:flex;flex-direction:column;gap:3px}
+.mi-title{
+  font-family:'Orbitron',monospace;font-size:12px;font-weight:400;
+  letter-spacing:0.08em;color:var(--text-dim);
+  transition:color 0.15s;text-transform:uppercase;
+}
+.mi-sub{font-size:10px;letter-spacing:0.1em;color:var(--text-faint)}
+.mi-arrow{font-size:14px;color:var(--text-faint);transition:color 0.15s;font-family:'Orbitron',monospace}
+
 .mi-sub-wrap{position:relative;height:14px;overflow:visible}
-.mi-sub-default{font-size:10px;letter-spacing:0.1em;color:#002244;position:absolute;top:0;left:0;transition:opacity 0.2s,transform 0.2s}
-.mi-sub-email{font-size:10px;letter-spacing:0.08em;color:#0066cc;position:absolute;top:0;left:0;opacity:0;transform:translateY(4px);transition:opacity 0.2s,transform 0.2s;white-space:nowrap}
+.mi-sub-default{
+  font-size:10px;letter-spacing:0.1em;color:var(--text-faint);
+  position:absolute;top:0;left:0;transition:opacity 0.2s,transform 0.2s;
+}
+.mi-sub-email{
+  font-size:10px;letter-spacing:0.08em;color:var(--accent2);
+  position:absolute;top:0;left:0;opacity:0;transform:translateY(4px);
+  transition:opacity 0.2s,transform 0.2s;white-space:nowrap;
+}
 
 .contacts-label{width:100%;display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.cl-text{font-size:9px;letter-spacing:0.3em;color:#003366;text-transform:uppercase;white-space:nowrap}
-.cl-line{flex:1;height:1px;background:#001833}
-.contacts-grid{width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
-.cb{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 8px;border:1px solid #001833;background:#00000a;text-decoration:none;color:#c8e8ff;transition:border-color 0.15s,background 0.15s;position:relative}
-.cb::after{content:attr(data-sym);position:absolute;top:6px;right:8px;font-size:10px;opacity:0.25;transition:opacity 0.15s}
-.cb:hover{border-color:#0044aa;background:#000d1a}
-.cb:hover::after{opacity:0.7}
-.cb:hover .ci{color:#0088ff}
-.cb:hover .ck{color:#88aacc}
-.ci{width:16px;height:16px;color:#003366;transition:color 0.15s}
-.ck{font-size:8px;letter-spacing:0.15em;text-transform:uppercase;color:#003366;transition:color 0.15s;font-family:'Orbitron',monospace;text-align:center}
-.hud-bottom{width:100%;margin-top:48px;padding:14px 0;border-top:1px solid #001833;display:flex;justify-content:space-between;align-items:center}
-.hud-left{font-size:9px;letter-spacing:0.1em;color:#002244}
+.cl-text{font-size:9px;letter-spacing:0.3em;color:var(--text-faint);text-transform:uppercase;white-space:nowrap}
+.cl-line{flex:1;height:1px;background:var(--border)}
+
+.contacts-grid{
+  width:100%;display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:4px;
+}
+
+.cb{
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  padding:16px 8px;
+  border:1px solid var(--border);background:var(--bg2);
+  text-decoration:none;color:var(--text);
+  transition:border-color 0.15s,background 0.15s,box-shadow 0.15s;
+  position:relative;
+}
+.cb::after{
+  content:attr(data-sym);position:absolute;top:6px;right:8px;
+  font-size:10px;opacity:0.2;transition:opacity 0.15s;
+}
+.cb:hover{border-color:var(--accent2);background:#d0e4f8;box-shadow:0 2px 10px var(--accent-glow)}
+.cb:hover::after{opacity:0.6}
+.cb:hover .ci{color:var(--accent2)}
+.cb:hover .ck{color:var(--accent)}
+.ci{width:16px;height:16px;color:var(--text-faint);transition:color 0.15s}
+.ck{
+  font-size:8px;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--text-faint);transition:color 0.15s;
+  font-family:'Orbitron',monospace;text-align:center;
+}
+
+.hud-bottom{
+  width:100%;margin-top:48px;padding:14px 0;
+  border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.hud-left{font-size:9px;letter-spacing:0.1em;color:var(--text-faint)}
 .hud-right{display:flex;align-items:center;gap:8px}
-.progress-bar{width:100%;height:2px;background:#001122;margin-top:16px;overflow:hidden}
-.progress-fill{height:100%;width:60%;background:#0055cc;animation:scan 3s linear infinite}
+
+.progress-bar{width:100%;height:2px;background:var(--border);margin-top:16px;overflow:hidden}
+.progress-fill{
+  height:100%;width:60%;
+  background:var(--accent);
+  animation:scan 3s linear infinite;
+}
 @keyframes scan{0%{transform:translateX(-100%)}100%{transform:translateX(200%)}}
+
+/* Mobile */
+@media(max-width:480px){
+  .boot-bar{padding:10px 16px}
+  .memory-card{padding:8px 16px}
+  .main{padding:0 16px}
+  .hero{padding:40px 0 28px}
+  .contacts-grid{grid-template-columns:repeat(2,1fr)}
+  .mi-sub-email{font-size:9px;letter-spacing:0.04em}
+  .hs-text{font-size:9px;letter-spacing:0.18em}
+  .boot-logo{font-size:10px;letter-spacing:0.2em}
+}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  .boot-status{animation:none}
+  .progress-fill{animation:none}
+  *{transition:none!important}
+}
 </style>
+</head>
+<body>
 
 <div class="scanlines"></div>
+
 <div class="boot-bar">
   <span class="boot-logo">PlayStation·2</span>
   <span class="boot-status">&#9632; MEMORY CARD OK</span>
 </div>
+
 <div class="memory-card">
   <div class="mc-dot"></div>
   <span class="mc-text">SLOT 1 · PORTFOLIO_DATA · 512KB</span>
 </div>
 
 <div class="main">
+
   <div class="hero">
     <p class="hero-eyebrow">Select Profile</p>
-    <div class="ps2-cross">
+    <div class="ps2-cross" aria-hidden="true">
       <span class="ps2-sym sym-sq">&#9632;</span>
       <span class="ps2-sym sym-tr">&#9650;</span>
       <span class="ps2-sym sym-x">&#10005;</span>
@@ -95,30 +277,31 @@ body{background:#000;color:#c8e8ff;font-family:'Share Tech Mono',monospace;min-h
     </div>
   </div>
 
-  <div class="select-menu">
-    <a class="menu-item active" href="https://vimeo.com/1067743003?fl=pl&fe=sh" target="_blank">
-      <span class="mi-btn">&#9679; START</span>
+  <nav class="select-menu" aria-label="Portfolio links">
+
+    <a class="menu-item active" href="https://vimeo.com/1067743003?fl=pl&fe=sh" target="_blank" rel="noopener">
+      <span class="mi-btn" aria-hidden="true">&#9679; START</span>
       <div class="mi-content">
         <span class="mi-title">Showreel &mdash; Regia</span>
         <span class="mi-sub">Demo reel &middot; 2024</span>
       </div>
-      <span class="mi-arrow">&#9658;</span>
+      <span class="mi-arrow" aria-hidden="true">&#9658;</span>
     </a>
 
-    <div class="menu-item" style="opacity:0.3;cursor:default;pointer-events:none;">
+    <div class="menu-item" style="opacity:0.35;cursor:default;pointer-events:none;" aria-hidden="true">
       <div class="mi-content">
         <span class="mi-title">Cortometraggi</span>
         <span class="mi-sub">Coming soon</span>
       </div>
-      <span class="mi-arrow" style="color:#001833">&#9658;</span>
+      <span class="mi-arrow" style="color:var(--border)">&#9658;</span>
     </div>
 
-    <div class="menu-item" style="opacity:0.3;cursor:default;pointer-events:none;">
+    <div class="menu-item" style="opacity:0.35;cursor:default;pointer-events:none;" aria-hidden="true">
       <div class="mi-content">
         <span class="mi-title">Videoclip &amp; Branded</span>
         <span class="mi-sub">Coming soon</span>
       </div>
-      <span class="mi-arrow" style="color:#001833">&#9658;</span>
+      <span class="mi-arrow" style="color:var(--border)">&#9658;</span>
     </div>
 
     <a class="menu-item has-overlay" href="mailto:alessandro.reato.98@gmail.com">
@@ -129,9 +312,10 @@ body{background:#000;color:#c8e8ff;font-family:'Share Tech Mono',monospace;min-h
           <span class="mi-sub-email">alessandro.reato.98@gmail.com</span>
         </div>
       </div>
-      <span class="mi-arrow">&#9658;</span>
+      <span class="mi-arrow" aria-hidden="true">&#9658;</span>
     </a>
-  </div>
+
+  </nav>
 
   <div class="contacts-label">
     <div class="cl-line"></div>
@@ -140,30 +324,35 @@ body{background:#000;color:#c8e8ff;font-family:'Share Tech Mono',monospace;min-h
   </div>
 
   <div class="contacts-grid">
-    <a class="cb" data-sym="&#10005;" href="https://www.instagram.com/alessandro_reato/" target="_blank">
-      <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+    <a class="cb" data-sym="&#10005;" href="https://www.instagram.com/alessandro_reato/" target="_blank" rel="noopener" aria-label="Instagram personale">
+      <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
       <span class="ck">Instagram</span>
     </a>
-    <a class="cb" data-sym="&#9632;" href="https://www.instagram.com/gotalightstudio/" target="_blank">
-      <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+    <a class="cb" data-sym="&#9632;" href="https://www.instagram.com/gotalightstudio/" target="_blank" rel="noopener" aria-label="Instagram Got a Light? Studio">
+      <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
       <span class="ck">Got a Light?</span>
     </a>
-    <a class="cb" data-sym="&#9679;" href="https://vimeo.com/1067743003?fl=pl&fe=sh" target="_blank">
-      <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+    <a class="cb" data-sym="&#9679;" href="https://vimeo.com/1067743003?fl=pl&fe=sh" target="_blank" rel="noopener" aria-label="Showreel su Vimeo">
+      <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
       <span class="ck">Vimeo</span>
     </a>
-    <a class="cb" data-sym="&#9650;" href="mailto:alessandro.reato.98@gmail.com">
-      <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+    <a class="cb" data-sym="&#9650;" href="mailto:alessandro.reato.98@gmail.com" aria-label="Invia email">
+      <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
       <span class="ck">Email</span>
     </a>
   </div>
 
   <div class="hud-bottom">
     <span class="hud-left">&copy; 2025 ALESSANDRO REATO &middot; ALL RIGHTS RESERVED</span>
-    <div class="hud-right">
-      <span class="ps2-sym sym-o" style="font-size:11px;opacity:0.5">&#9679;</span>
-      <span class="ps2-sym sym-x" style="font-size:11px;opacity:0.5">&#10005;</span>
+    <div class="hud-right" aria-hidden="true">
+      <span class="ps2-sym sym-o" style="font-size:11px;opacity:0.4">&#9679;</span>
+      <span class="ps2-sym sym-x" style="font-size:11px;opacity:0.4">&#10005;</span>
     </div>
   </div>
-  <div class="progress-bar"><div class="progress-fill"></div></div>
+
+  <div class="progress-bar" aria-hidden="true"><div class="progress-fill"></div></div>
+
 </div>
+
+</body>
+</html>
